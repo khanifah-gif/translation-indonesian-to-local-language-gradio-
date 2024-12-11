@@ -1,1 +1,3 @@
-resources
+model
+.env
+__pycache__

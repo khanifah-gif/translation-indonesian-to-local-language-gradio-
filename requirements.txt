@@ -90,6 +90,7 @@ pydantic_core==2.27.1
 pydub==0.25.1
 Pygments==2.18.0
 python-dateutil==2.9.0.post0
+python-dotenv==1.0.1
 python-json-logger==2.0.7
 python-multipart==0.0.19
 pytz==2024.2

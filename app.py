@@ -1,18 +1,19 @@
 import gradio as gr
 from llama_cpp import Llama
+import config
 
 model = Llama(
-    model_path="resources/gemma2-9b-cpt-sahabatai-v1-instruct.Q2_K.gguf"
+    model_path=config.MODEL
 )
 
 langs = ["javanese", "sundanese"]
 
 def translate(text, lang):
     prompts = {
-        "javanese": "Translate the following text into Javanese.",
-        "sundanese": "Translate the following text into Sundanese."
+        "javanese": "Terjemahkan setiap text yang saya berikan ke Bahasa Jawa!",
+        "sundanese": "Terjemahkan setiap text yang saya berikan ke Bahasa Sunda!"
     }
-    prompt = prompts.get(lang, "Translate the following text.")
+    prompt = prompts.get(lang, "Anda adalah mesin penerjemah antar bahasa daerah yang handal.")
     messages = [
         {"role": "system", "content": f"{prompt}"},
         {"role": "user", "content": f"{text}"}
